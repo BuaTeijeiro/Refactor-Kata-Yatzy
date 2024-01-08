@@ -4,7 +4,8 @@ class Yatzy:
     
     def chance(*dice):
         '''
-        Se repetian lineas de codigo que se podian sustituir usando un bucle
+        Código se halla duplicado
+        La lista de parámetros tiene demasiados parámetros
         '''
         
         total = 0
