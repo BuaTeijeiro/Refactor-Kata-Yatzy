@@ -126,16 +126,15 @@ class Yatzy:
     
 
     @staticmethod
-    def three_of_a_kind( d1,  d2,  d3,  d4,  d5):
-        t = [0]*6
-        t[d1-1] += 1
-        t[d2-1] += 1
-        t[d3-1] += 1
-        t[d4-1] += 1
-        t[d5-1] += 1
+    def three_of_a_kind(*dice):
+        THREE = 3
+        dice_counts = {x: 0 for x in range(1,7)}
+        for die in dice:
+            dice_counts[die] += 1
+        
         for i in range(6):
-            if (t[i] >= 3):
-                return (i+1) * 3
+            if dice_counts[6-i] >= THREE:
+                return (6-i)*THREE
         return 0
     
 
