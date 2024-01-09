@@ -111,35 +111,17 @@ class Yatzy:
                 if pairs_count == 2:
                     return score * 2
         return 0        
-            
-        """counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        n = 0
-        score = 0
-        for i in range(6):
-            if (counts[6-i-1] >= 2):
-                n = n+1
-                score += (6-i)
-                    
-        if (n == 2):
-            return score * 2
-        else:
-            return 0"""
     
     @staticmethod
-    def four_of_a_kind( _1,  _2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[_1-1] += 1
-        tallies[_2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
+    def four_of_a_kind(*dice):
+        FOUR = 4
+        dice_counts = {x: 0 for x in range(1,7)}
+        for die in dice:
+            dice_counts[die] += 1
+        
         for i in range(6):
-            if (tallies[i] >= 4):
-                return (i+1) * 4
+            if dice_counts[6-i] >= FOUR:
+                return (6-i)*FOUR
         return 0
     
 
