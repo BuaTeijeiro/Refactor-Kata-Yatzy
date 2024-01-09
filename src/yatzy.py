@@ -93,14 +93,26 @@ class Yatzy:
             dice_counts[die] += 1
         
         for i in range(6):
-            if (dice_counts[6-i] >= 2):
+            if dice_counts[6-i] >= 2:
                 return (6-i)*2
         return 0
     
     @staticmethod
-    def two_pair( d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
+    def two_pair(*dice):
+        dice_counts = {x: 0 for x in range(1,7)}
+        for die in dice:
+            dice_counts[die] += 1
+        pairs_count = 0
+        score = 0
+        for i in range(6):
+            if dice_counts[6-i] >= 2:
+                pairs_count += 1
+                score += (6-i)
+                if pairs_count == 2:
+                    return score * 2
+        return 0        
+            
+        """counts[d1-1] += 1
         counts[d2-1] += 1
         counts[d3-1] += 1
         counts[d4-1] += 1
@@ -115,7 +127,7 @@ class Yatzy:
         if (n == 2):
             return score * 2
         else:
-            return 0
+            return 0"""
     
     @staticmethod
     def four_of_a_kind( _1,  _2,  d3,  d4,  d5):
