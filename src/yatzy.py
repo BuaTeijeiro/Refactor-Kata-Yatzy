@@ -1,7 +1,6 @@
 class Yatzy:
 
     @staticmethod
-    
     def chance(*dice):
         '''
         Código se halla duplicado
@@ -88,17 +87,14 @@ class Yatzy:
         return sum_sixes
     
     @staticmethod
-    def score_pair( d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        at = 0
-        for at in range(6):
-            if (counts[6-at-1] == 2):
-                return (6-at)*2
+    def score_pair(*dice):
+        dice_counts = {x: 0 for x in range(1,7)}
+        for die in dice:
+            dice_counts[die] += 1
+        
+        for i in range(6):
+            if (dice_counts[6-i] >= 2):
+                return (6-i)*2
         return 0
     
     @staticmethod
