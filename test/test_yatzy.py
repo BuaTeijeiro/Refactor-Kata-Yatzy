@@ -3,6 +3,7 @@ from src.yatzy import Yatzy
 # These unit tests can be run using the py.test framework
 # available from http://pytest.org/
 
+
 def test_chance_scores_sum_of_all_dice():
         assert Yatzy.chance(2,3,4,5,1) == 15
         assert Yatzy.chance(3,3,4,5,1) == 16

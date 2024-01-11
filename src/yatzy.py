@@ -1,4 +1,7 @@
 class Yatzy:
+    
+    FIFTY = 50
+    ZERO = 0
 
     @staticmethod
     def chance(*dice):
@@ -14,16 +17,24 @@ class Yatzy:
 
     @staticmethod
     def yatzy(*dice):
+        '''
+        Renombrar una variable con un nombre más claro e informativo
+        Reemplazar un número mágico por una constante
+        '''
         dice_counts = {x: 0 for x in range(1,7)}
         for die in dice:
             dice_counts[die] += 1
         for die in dice_counts:
             if dice_counts[die] == 5:
-                return 50
-        return 0
+                return Yatzy.FIFTY
+        return Yatzy.ZERO
     
     @staticmethod
     def ones( *dice):
+        '''
+        Código se halla duplicado
+        La lista de parámetros tiene demasiados parámetros
+        '''
         sum_ones = 0
         for die in dice:
             if die == 1:
@@ -35,6 +46,10 @@ class Yatzy:
 
     @staticmethod
     def twos(*dice):
+        '''
+        Código se halla duplicado
+        La lista de parámetros tiene demasiados parámetros
+        '''
         sum_twos = 0
         for die in dice:
             if die == 2:
@@ -45,6 +60,10 @@ class Yatzy:
     
     @staticmethod
     def threes(*dice):
+        '''
+        Código se halla duplicado
+        La lista de parámetros tiene demasiados parámetros
+        '''
         sum_threes = 0
         for die in dice:
             if die == 3:
@@ -53,17 +72,13 @@ class Yatzy:
                 continue
         return sum_threes
     
-
-    def __init__(self, d1, d2, d3, d4, _5):
-        self.dice = [0]*5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = _5
     
     @staticmethod
     def fours(*dice):
+        '''
+        Renombrar una variable con un nombre más claro e informativo
+        Cambiar objetos de referencia (self) a objetos de valor (enteros)
+        '''
         sum_fours = 0
         for die in dice:
             if die == 4: 
@@ -72,6 +87,10 @@ class Yatzy:
     
     @staticmethod
     def fives(*dice):
+        '''
+        Renombrar una variable con un nombre más claro e informativo
+        Cambiar objetos de referencia (self) a objetos de valor (enteros)
+        '''
         sum_fives = 0
         for die in dice:
             if die == 5: 
@@ -80,6 +99,10 @@ class Yatzy:
     
     @staticmethod
     def sixes(*dice):
+        '''
+        Renombrar una variable con un nombre más claro e informativo
+        Cambiar objetos de referencia (self) a objetos de valor (enteros)
+        '''
         sum_sixes = 0
         for die in dice:
             if die == 6: 
@@ -88,6 +111,11 @@ class Yatzy:
     
     @staticmethod
     def score_pair(*dice):
+        '''
+        Código se halla duplicado
+        La lista de parámetros tiene demasiados parámetros
+        Renombrar una variable con un nombre más claro e informativo
+        '''
         dice_counts = {x: 0 for x in range(1,7)}
         for die in dice:
             dice_counts[die] += 1
@@ -99,6 +127,11 @@ class Yatzy:
     
     @staticmethod
     def two_pair(*dice):
+        '''
+        Código se halla duplicado
+        La lista de parámetros tiene demasiados parámetros
+        Renombrar una variable con un nombre más claro e informativo
+        '''
         dice_counts = {x: 0 for x in range(1,7)}
         for die in dice:
             dice_counts[die] += 1
@@ -114,6 +147,12 @@ class Yatzy:
     
     @staticmethod
     def four_of_a_kind(*dice):
+        '''
+        Código se halla duplicado
+        La lista de parámetros tiene demasiados parámetros
+        Renombrar una variable con un nombre más claro e informativo
+        Reemplazar un número mágico por una constante
+        '''
         FOUR = 4
         dice_counts = {x: 0 for x in range(1,7)}
         for die in dice:
@@ -127,6 +166,12 @@ class Yatzy:
 
     @staticmethod
     def three_of_a_kind(*dice):
+        '''
+        Código se halla duplicado
+        La lista de parámetros tiene demasiados parámetros
+        Renombrar una variable con un nombre más claro e informativo
+        Reemplazar un número mágico por una constante
+        '''
         THREE = 3
         dice_counts = {x: 0 for x in range(1,7)}
         for die in dice:
@@ -140,15 +185,31 @@ class Yatzy:
 
     @staticmethod
     def smallStraight(*dice):
+        '''
+        Código se halla duplicado
+        La lista de parámetros tiene demasiados parámetros
+        Sustituir un algoritmo complejo por uno simple
+        '''
         return 15 if sorted(list(dice)) == [1,2,3,4,5] else 0
 
     @staticmethod
     def largeStraight(*dice):
+        '''
+        Código se halla duplicado
+        La lista de parámetros tiene demasiados parámetros
+        Sustituir un algoritmo complejo por uno simple
+        '''
         return 20 if sorted(list(dice)) == [2,3,4,5,6] else 0
     
 
     @staticmethod
     def fullHouse(*dice):
+        '''
+        Código se halla duplicado
+        La lista de parámetros tiene demasiados parámetros
+        Renombrar una variable con un nombre más claro e informativo
+        Sustituir un algoritmo complejo por uno simple
+        '''
         dice_counts = {x: 0 for x in range(1,7)}
         for die in dice:
             dice_counts[die] += 1
